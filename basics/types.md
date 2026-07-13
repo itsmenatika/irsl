@@ -1,26 +1,26 @@
-* types
+# types
 
 There are several predefined types:
 
-** undefined (ID 0)
+## undefined (ID 0)
 
 undefined means no value. Setting something to undefined deletes it.
 
 It is however also defined as its own type that is inaccessible to user.
 
-** null (ID 1)
+## null (ID 1)
 
 null means an absence of a value but with reserved place for said value.
 The rest of implementation is left to interpreter, transpiler or 
 
 
-** boolean (ID 2)
+## boolean (ID 2)
 
 It represents true or false. The implementation is left to interpreter, transpiler or compiler.
 
 
 
-** number (ID 3)
+## number (ID 3)
 
 Every number is by default [IEEE 754 double-precision binary floating-point format](https://en.wikipedia.org/wiki/Double-precision_floating-point_format). It means that every number is signed and can represent floating values.
 
@@ -34,18 +34,18 @@ Optimization by interpreter, transpiler or compiler is permitted, but all number
 
 It's expected to be converted to decimal (id 20) or bigint (19) before it exceeds its maximum value.
 
-** string (ID 4)
+## string (ID 4)
 
 It uses UTF encoding. The rest of implementation is left to interpreter, transpiler or compiler.
 
 
-** array (ID 5)
+## array (ID 5)
 
 array can contain every type at the same time. The implementetion is left to interpreter, transpiler or compiler.
 
 Optimization by interpreter, transpiler or compiler is permitted, but all numbers have to be able to be used like IEEE 754 double-precision binary floating-point format numbers.
 
-** object (ID 6)
+## object (ID 6)
 
 Objects work like a maps with keys that can be dynamically added and removed during runtime.
 
@@ -54,64 +54,64 @@ Their value can be of any type, also an another object.
 
 Optimization by interpreter, transpiler or compiler is permitted, but all numbers have to be able to be used like IEEE 754 double-precision binary floating-point format numbers.
 
-** int8 (ID 7)
+## int8 (ID 7)
 
 8 bit signed integer
 
-** uint8 (ID 8)
+## uint8 (ID 8)
 
 8 bit unsigned integer
 
-** int16 (ID 9)
+## int16 (ID 9)
 
 16 bit signed integer
  
-** uint16 (ID 10)
+## uint16 (ID 10)
 
 16 bit unsigned integer
 
-** int32 (ID 11)
+## int32 (ID 11)
 
 32 bit signed integer
 
-** uint32 (ID 12)
+## uint32 (ID 12)
 
 32 bit unsigned integer
 
-** int64 (ID 13)
+## int64 (ID 13)
 
 64 bit signed integer
 
-** uint64 (ID 14)
+## uint64 (ID 14)
 
 64 bit unsigned integer
 
-** function (ID 15)
+## function (ID 15)
 
 Yes, function is a type.
 
-** bytes (id 16)
+## bytes (id 16)
 
 an immutable byte array of a fixed size
 
-** char (id 17)
+## char (id 17)
 
 It's a string (id 4) that is forced to be only one character
 
-** symbol (id 18)
+## symbol (id 18)
 
 It represents a unique value. Each symbol holds also a descriptor.
 
-** bigint (id 19)
+## bigint (id 19)
 
 It's used to store arbitally large integer numbers.
 
-** decimal (id 20)
+## decimal (id 20)
 
 It's used to store arbitally large float numbers.
 
 
-** function (id 21)
+## function (id 21)
 
 
 
@@ -120,18 +120,18 @@ It's used to store arbitally large float numbers.
 RESERVED
 
 
-* conversion to other types
+# conversion to other types
 
 
-** undefined
-
-CONVERSION IS PROHIBITED.
-
-** null
+## undefined
 
 CONVERSION IS PROHIBITED.
 
-** boolean
+## null
+
+CONVERSION IS PROHIBITED.
+
+## boolean
 
 undefined -> false
 null -> false
@@ -155,7 +155,7 @@ bigint -> true if it's not 0 or negative
 decimal -> true if it's not 0 or negative
 function -> true
 
-** number
+## number
 
 undefined -> 0
 null -> 0
@@ -180,7 +180,7 @@ decimal -> tries to convert it if possible. Error is thrown is there's no way to
 function -> throws an error
 
 
-** string
+## string
 
 undefined -> "undefined"
 null -> "null"
@@ -207,7 +207,7 @@ function -> "function(...args): returntype"
 
 
 
-** array
+## array
 
 undefined -> [undefined]
 null -> [null]
@@ -234,7 +234,7 @@ function -> [that function]
 NOTE: explicit conversion to an array rarely occures.
 
 
-** object
+## object
 
 
 undefined -> throws an error
@@ -261,7 +261,7 @@ function -> creates an empty object with call() function
 
 
 
-** (u)int(8/16/32/64) or bigint or decimal
+## (u)int(8/16/32/64) or bigint or decimal
 
 
 undefined -> 0
@@ -286,11 +286,11 @@ bigint -> tries to convert it if possible. Error is thrown is there's no way to 
 decimal -> tries to convert it if possible. Error is thrown is there's no way to convert it
 function -> throws an error
 
-** symbol
+## symbol
 
 CONVERSION IS PROHIBITED.
 
-** bytes
+## bytes
 
 undefined -> 0 as one byte
 null -> 0 as one byte
@@ -314,28 +314,28 @@ bigint -> tries to convert it if possible. Error is thrown is there's no way to 
 decimal -> tries to convert it if possible. Error is thrown is there's no way to convert it
 function -> throws an error
 
-** char
+## char
 
 It works like with string type, but it will throw an error if it can't convert it to the length of one.
 
-** function
+## function
 
 CONVERSION IS PROHIBITED.
 
-* type attributes
+# type attributes
 
-** const
+## const
 
 every type can be a const meaning it can be assigned to a different value,
 however it doesnt indicate that value itself can't be changed.
 
 
-** immutable (readonly can be also used as an alias)
+## immutable (readonly can be also used as an alias)
 
 It means that the value itself can be changed. However its name can be assigned to a different object
 
 
-** difference between const and readonly
+## difference between const and readonly
 
 
 ```
