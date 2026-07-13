@@ -120,6 +120,11 @@ It's used to store arbitally large float numbers.
 RESERVED
 
 
+
+
+
+
+
 # conversion to other types
 
 
@@ -133,103 +138,103 @@ CONVERSION IS PROHIBITED.
 
 ## boolean
 
-undefined -> false
-null -> false
-bool -> retains the same value
-number -> true if number is not 0 or negative
-string -> true if a string is not empty
-array -> true
-object -> true
-int8 -> true if they're not negative or 0
-uint8 -> true if they're not all 0s
-int16 -> true if they're not negative or 0
-uint16 -> true if they're not all 0s
-int32 -> true if they're not negative or 0
-uint32 -> true if they're not all 0s
-int64 -> true if they're not negative or 0
-uint64 -> true if they're not all 0s
-symbol -> true
-bytes -> true if there's no 0
-char -> true if a string is not empty
-bigint -> true if it's not 0 or negative
-decimal -> true if it's not 0 or negative
-function -> true
+* undefined -> false
+* null -> false
+* bool -> retains the same value
+* number -> true if number is not 0 or negative
+* string -> true if a string is not empty
+* array -> true
+* object -> true
+* int8 -> true if they're not negative or 0
+* uint8 -> true if they're not all 0s
+* int16 -> true if they're not negative or 0
+* uint16 -> true if they're not all 0s
+* int32 -> true if they're not negative or 0
+* uint32 -> true if they're not all 0s
+* int64 -> true if they're not negative or 0
+* uint64 -> true if they're not all 0s
+* symbol -> true
+* bytes -> true if there's no 0
+* char -> true if a string is not empty
+* bigint -> true if it's not 0 or negative
+* decimal -> true if it's not 0 or negative
+* function -> true
 
 ## number
 
-undefined -> 0
-null -> 0
-bool -> 0 if false, 1 if true
-number -> retains
-string -> tries to convert it if possible. Error is thrown is there's no way to convert it
-array -> throws an error
-object -> throws an error
-int8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-symbol -> throws an error
-bytes -> tries to convert it if possible. Error is thrown is there's no way to convert it
-char -> tries to convert it if possible. Error is thrown is there's no way to convert it
-bigint -> tries to convert it if possible. Error is thrown is there's no way to convert it
-decimal -> tries to convert it if possible. Error is thrown is there's no way to convert it
-function -> throws an error
+* undefined -> 0
+* null -> 0
+* bool -> 0 if false, 1 if true
+* number -> retains
+* string -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* array -> throws an error
+* object -> throws an error
+* int8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* symbol -> throws an error
+* bytes -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* char -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* bigint -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* decimal -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* function -> throws an error
 
 
 ## string
 
-undefined -> "undefined"
-null -> "null"
-bool -> "false" if false, "true" if true
-number -> "{number}" where number is a string representation of that number
-string -> retains
-array -> "[...elements]" for example [1,2,5, "s"]. If there's more than 100 elements it is: "[array with (number of elements) elements]"
+* undefined -> "undefined"
+* null -> "null"
+* bool -> "false" if false, "true" if true
+* number -> "{number}" where number is a string representation of that number
+* string -> retains
+* array -> "[...elements]" for example [1,2,5, "s"]. If there's more than 100 elements it is: "[array with (number of elements) elements]"
 object -> tries to convert to json like pretty representation
-int8 -> "{int}" where int is a string representation of that int
-uint8 -> "{int}" where int is a string representation of that int
-int16 -> "{int}" where int is a string representation of that int
-uint16 -> "{int}" where int is a string representation of that int
-int32 -> "{int}" where int is a string representation of that int
-uint32 -> "{int}" where int is a string representation of that int
-int64 -> "{int}" where int is a string representation of that int
-uint64 -> "{int}" where int is a string representation of that int
-symbol -> symbol descriptor
-bytes -> "[(number of bytes) raw bytes]"
-char -> retains
-bigint -> "{int}" where int is a string representation of that int
-decimal -> "{decimal}" where decimal is a string representation of that decimal
-function -> "function(...args): returntype"
+* int8 -> "{int}" where int is a string representation of that int
+* uint8 -> "{int}" where int is a string representation of that int
+* int16 -> "{int}" where int is a string representation of that int
+* uint16 -> "{int}" where int is a string representation of that int
+* int32 -> "{int}" where int is a string representation of that int
+* uint32 -> "{int}" where int is a string representation of that int
+* int64 -> "{int}" where int is a string representation of that int
+* uint64 -> "{int}" where int is a string representation of that int
+* symbol -> symbol descriptor
+* bytes -> "[(number of bytes) raw bytes]"
+* char -> retains
+* bigint -> "{int}" where int is a string representation of that int
+* decimal -> "{decimal}" where decimal is a string representation of that decimal
+* function -> "function(...args): returntype"
 
 
 
 
 ## array
 
-undefined -> [undefined]
-null -> [null]
-bool -> [that bool]
-number -> [that number]
-string -> [that string]
-array -> retains
-object -> [that object]
-int8 -> [that int]
-uint8 -> [that int]
-int16 -> [that int]
-uint16 -> [that int]
-int32 -> [that int]
-uint32 -> [that int]
-int64 -> [that int]
-uint64 -> [that int]
-symbol -> [that symbol]
-bytes -> [...an array using int fixed sized types]
-char -> [that char]
-bigint -> [that big int]
-decimal -> [that decimal]
-function -> [that function]
+* undefined -> [undefined]
+* null -> [null]
+* bool -> [that bool]
+* number -> [that number]
+* string -> [that string]
+* array -> retains
+* object -> [that object]
+* int8 -> [that int]
+* uint8 -> [that int]
+* int16 -> [that int]
+* uint16 -> [that int]
+* int32 -> [that int]
+* uint32 -> [that int]
+* int64 -> [that int]
+* uint64 -> [that int]
+* symbol -> [that symbol]
+* bytes -> [...an array using int fixed sized types]
+* char -> [that char]
+* bigint -> [that big int]
+* decimal -> [that decimal]
+* function -> [that function]
 
 NOTE: explicit conversion to an array rarely occures.
 
@@ -237,54 +242,54 @@ NOTE: explicit conversion to an array rarely occures.
 ## object
 
 
-undefined -> throws an error
-null -> throws an error
-bool -> throws an error
-number -> throws an error
-string -> throws an error
-array -> throws an error
-object -> throws an error
-int8 -> throws an error
-uint8 -> throws an error
-int16 -> throws an error
-uint16 -> throws an error
-int32 -> throws an error
-uint32 -> throws an error
-int64 -> throws an error
-uint64 -> throws an error
-symbol -> throws an error
-bytes -> throws an error
-char -> throws an error
-bigint -> throws an error
-decimal -> throws an error
-function -> creates an empty object with call() function
+* undefined -> throws an error
+* null -> throws an error
+* bool -> throws an error
+* number -> throws an error
+* string -> throws an error
+* array -> throws an error
+* object -> throws an error
+* int8 -> throws an error
+* uint8 -> throws an error
+* int16 -> throws an error
+* uint16 -> throws an error
+* int32 -> throws an error
+* uint32 -> throws an error
+* int64 -> throws an error
+* uint64 -> throws an error
+* symbol -> throws an error
+* bytes -> throws an error
+* char -> throws an error
+* bigint -> throws an error
+* decimal -> throws an error
+* function -> creates an empty object with call() function
 
 
 
 ## (u)int(8/16/32/64) or bigint or decimal
 
 
-undefined -> 0
-null -> 0
-bool -> 0 if false, 1 if true
-number -> tries to convert it if possible. Error is thrown is there's no way to convert it
-string -> tries to convert it if possible. Error is thrown is there's no way to convert it
-array -> throws an error
-object -> throws an error
-int8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-symbol -> throws an error
-bytes -> tries to convert it if possible. Error is thrown is there's no way to convert it
-char -> tries to convert it if possible. Error is thrown is there's no way to convert it
-bigint -> tries to convert it if possible. Error is thrown is there's no way to convert it
-decimal -> tries to convert it if possible. Error is thrown is there's no way to convert it
-function -> throws an error
+* undefined -> 0
+* null -> 0
+* bool -> 0 if false, 1 if true
+* number -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* string -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* array -> throws an error
+* object -> throws an error
+* int8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* symbol -> throws an error
+* bytes -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* char -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* bigint -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* decimal -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* function -> throws an error
 
 ## symbol
 
@@ -292,27 +297,27 @@ CONVERSION IS PROHIBITED.
 
 ## bytes
 
-undefined -> 0 as one byte
-null -> 0 as one byte
-bool -> 0 if false, 1 if true (one byte)
-number -> tries to convert it if possible. Error is thrown is there's no way to convert it
-string -> tries to convert it if possible. Error is thrown is there's no way to convert it
-array -> tries to convert it if possible. Error is thrown is there's no way to convert it
-object -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-int64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-uint64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
-symbol -> throws an error
-bytes -> tries to convert it if possible. Error is thrown is there's no way to convert it
-char -> tries to convert it if possible. Error is thrown is there's no way to convert it
-bigint -> tries to convert it if possible. Error is thrown is there's no way to convert it
-decimal -> tries to convert it if possible. Error is thrown is there's no way to convert it
-function -> throws an error
+* undefined -> 0 as one byte
+* null -> 0 as one byte
+* bool -> 0 if false, 1 if true (one byte)
+* number -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* string -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* array -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* object -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint8 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint16 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint32 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* int64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* uint64 -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* symbol -> throws an error
+* bytes -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* char -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* bigint -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* decimal -> tries to convert it if possible. Error is thrown is there's no way to convert it
+* function -> throws an error
 
 ## char
 
@@ -321,6 +326,9 @@ It works like with string type, but it will throw an error if it can't convert i
 ## function
 
 CONVERSION IS PROHIBITED.
+
+
+
 
 # type attributes
 
