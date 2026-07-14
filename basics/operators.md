@@ -12,13 +12,6 @@
 * % -> modulo operator
 * ^ -> power (** can also be used as an alias to help others comming from other languages)
 
-## math and assignment operators
-
-* += -> adds and assigns (it throws an error if it can't)
-* -= -> substracts and assigns (it throws an error if it can't)
-* *= -> multiplies and assigns (it throws an error if it can't)
-* /= -> divides and assigns (it throws an error if it can't)
-* %= -> uses modulo and assigns (it throws an error if it can't)
 
 
 ## comparision operators
@@ -43,6 +36,20 @@
 * >> -> right shift
 * <> -> xor
 
+## math QUICK assignment operators
+
+* += -> adds and assigns
+* -= -> substracts and assigns 
+* *= -> multiplies and assigns
+* /= -> divides and assigns 
+* %= -> uses modulo and assigns 
+* &= -> uses and and assigns
+* |= -> uses or and assigns
+* ~= -> uses not and assigns
+* <<= -> uses left shift and assigns
+* >>= -> uses right shift and assigns
+* <>= -> uses xor and assigns
+
 
 ## looter notation
 
@@ -66,3 +73,9 @@ it throws B times a dice of A sides.
 ### d
 
 It is an alias for d6
+
+
+## range
+
+A..B will create a range starting at A and ending at B (including A and B). It can act as an array
+

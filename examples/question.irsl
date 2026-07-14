@@ -1,0 +1,8 @@
+import io;
+use io;
+
+
+printLn("Hejjj, co u ciebie?");
+print(">> "); flush();
+const readonly answer = readLine();
+print("To dobrze, że jest " + answer);
